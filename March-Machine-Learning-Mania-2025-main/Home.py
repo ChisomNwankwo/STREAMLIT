@@ -88,26 +88,12 @@ st.title("🏀 Interactive NCAA Tournament Dashboard")
 
 #-----------------------------------------------------------------------------------------------------
 # ---- Function to convert image to base64 ----
-def get_base64(image_path):
-    p = Path(image_path)
+BASE_DIR = Path(__file__).parent
 
-    st.write("Current directory:", Path.cwd())
-    st.write("Trying to open:", p)
-    st.write("Absolute path:", p.resolve())
-    st.write("Exists?", p.exists())
+def get_base64(filename):
+    image_path = BASE_DIR / "images" / filename
 
-    if not p.exists():
-        st.write("Files in current directory:")
-        st.write(list(Path.cwd().iterdir()))
-
-        images = Path.cwd() / "images"
-        if images.exists():
-            st.write("Files in images folder:")
-            st.write(list(images.iterdir()))
-
-        raise FileNotFoundError(f"{p} not found")
-
-    with open(p, "rb") as f:
+    with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode()
         
 #def get_base64(image_path):
@@ -115,14 +101,14 @@ def get_base64(image_path):
   #      return base64.b64encode(f.read()).decode()
 
 # ---- Load your images ----
-img1 = get_base64("images/1.jpg")
-img2 = get_base64("images/2.jpg")
-img3 = get_base64("images/3.jpg")
-img4 = get_base64("images/4.jpg")
-img5 = get_base64("images/5.jpg")
-img6 = get_base64("images/6.jpg")
-img7 = get_base64("images/7.jpg")
-img8 = get_base64("images/8.jpg")
+img1 = get_base64("1.jpg")
+img2 = get_base64("2.jpg")
+img3 = get_base64("3.jpg")
+img4 = get_base64("4.jpg")
+img5 = get_base64("5.jpg")
+img6 = get_base64("6.jpg")
+img7 = get_base64("7.jpg")
+img8 = get_base64("8.jpg")
 
 
 # ---- HTML + CSS + JS ----
