@@ -89,8 +89,19 @@ st.title("🏀 Interactive NCAA Tournament Dashboard")
 #-----------------------------------------------------------------------------------------------------
 # ---- Function to convert image to base64 ----
 def get_base64(image_path):
-    with open(image_path, "rb") as f:
+    print("Current working directory:", os.getcwd())
+    print("Requested path:", image_path)
+
+    p = Path(image_path)
+    print("Absolute path:", p.resolve())
+    print("Exists:", p.exists())
+
+    with open(p, "rb") as f:
         return base64.b64encode(f.read()).decode()
+        
+#def get_base64(image_path):
+  #  with open(image_path, "rb") as f:
+  #      return base64.b64encode(f.read()).decode()
 
 # ---- Load your images ----
 img1 = get_base64("images/1.jpg")
