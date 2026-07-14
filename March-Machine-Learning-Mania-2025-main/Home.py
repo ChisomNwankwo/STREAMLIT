@@ -93,7 +93,7 @@ def get_base64(image_path):
         return base64.b64encode(f.read()).decode()
 
 # ---- Load your images ----
-img1 = get_base64("images/2.jpg")
+img1 = get_base64("images/1.jpg")
 img2 = get_base64("images/2.jpg")
 img3 = get_base64("images/3.jpg")
 img4 = get_base64("images/4.jpg")
