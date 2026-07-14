@@ -12,4 +12,4 @@ Good luck and happy forecasting!
 
 ## Streanlit App
 
-access app [here](https://march-machine-learning-mania-2025-chisom.streamlit.app/)
+access app [here](https://ncaa-tournament-games-2025.streamlit.app/)
